@@ -3,21 +3,22 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46336A61228EA2E00031AB0D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46336A60228EA2E00031AB0D /* Font.swift */; };
 		46506251228BD9520083BF0D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46506250228BD9520083BF0D /* AppDelegate.swift */; };
 		46506253228BD9520083BF0D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46506252228BD9520083BF0D /* ViewController.swift */; };
 		46506256228BD9520083BF0D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46506254228BD9520083BF0D /* Main.storyboard */; };
 		46506258228BD9530083BF0D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46506257228BD9530083BF0D /* Assets.xcassets */; };
 		4650625B228BD9530083BF0D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46506259228BD9530083BF0D /* LaunchScreen.storyboard */; };
-		46506263228BDD2C0083BF0D /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46506262228BDD2C0083BF0D /* Font.swift */; };
 		990C6327E7708C44D407716A /* Pods_DSFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E31FDF17C8B900FA33C39 /* Pods_DSFont.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D0A2B014A2ED3A1A01B0CDE /* Pods-DSFont.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSFont.release.xcconfig"; path = "Target Support Files/Pods-DSFont/Pods-DSFont.release.xcconfig"; sourceTree = "<group>"; };
+		46336A60228EA2E00031AB0D /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		4650624D228BD9520083BF0D /* DSFont.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSFont.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46506250228BD9520083BF0D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46506252228BD9520083BF0D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -25,7 +26,6 @@
 		46506257228BD9530083BF0D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4650625A228BD9530083BF0D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4650625C228BD9530083BF0D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		46506262228BDD2C0083BF0D /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		B2C9281FAC361324379438AC /* Pods-DSFont.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSFont.debug.xcconfig"; path = "Target Support Files/Pods-DSFont/Pods-DSFont.debug.xcconfig"; sourceTree = "<group>"; };
 		BF8E31FDF17C8B900FA33C39 /* Pods_DSFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DSFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -69,7 +69,7 @@
 				46506257228BD9530083BF0D /* Assets.xcassets */,
 				46506259228BD9530083BF0D /* LaunchScreen.storyboard */,
 				4650625C228BD9530083BF0D /* Info.plist */,
-				46506262228BDD2C0083BF0D /* Font.swift */,
+				46336A60228EA2E00031AB0D /* Font.swift */,
 			);
 			path = DSFont;
 			sourceTree = "<group>";
@@ -88,7 +88,6 @@
 				B2C9281FAC361324379438AC /* Pods-DSFont.debug.xcconfig */,
 				1D0A2B014A2ED3A1A01B0CDE /* Pods-DSFont.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -209,7 +208,7 @@
 			files = (
 				46506253228BD9520083BF0D /* ViewController.swift in Sources */,
 				46506251228BD9520083BF0D /* AppDelegate.swift in Sources */,
-				46506263228BDD2C0083BF0D /* Font.swift in Sources */,
+				46336A61228EA2E00031AB0D /* Font.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

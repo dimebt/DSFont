@@ -50,184 +50,63 @@ struct Font {
     var Caption1: UIFont?
     var Caption2: UIFont?
     
-    private var LargeTitleFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var Title1FontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var Title2FontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var Title3FontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var HeadlineFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var BodyFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var CalloutFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var SubheadFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var FootnoteFontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var Caption1FontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
-    private var Caption2FontSizes: [CGFloat] = [10.0, 15.0, 16.0, 17.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0, 18.0]
+    private var LargeTitleFontSizes: [CGFloat] = [33.0, 33.0, 33.0, 33.0, 33.0, 33.0, 33, 33.0, 33.0, 33.0, 33.0, 33.0]
+    private var Title1FontSizes: [CGFloat] = [27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0, 27.0]
+    private var Title2FontSizes: [CGFloat] = [21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0, 21.0]
+    private var Title3FontSizes: [CGFloat] = [19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0, 19.0]
+    private var HeadlineFontSizes: [CGFloat] = [16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0]
+    private var BodyFontSizes: [CGFloat] = [16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0, 16.0]
+    private var CalloutFontSizes: [CGFloat] = [15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0, 15.0]
+    private var SubheadFontSizes: [CGFloat] = [14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0, 14.0]
+    private var FootnoteFontSizes: [CGFloat] = [12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0, 12.0]
+    private var Caption1FontSizes: [CGFloat] = [11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0]
+    private var Caption2FontSizes: [CGFloat] = [11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0, 11.0]
     
     
     init(_ fontName: FontName) {
         self.setFontNames(fontName: fontName)
-        self.setFontSize()
+    }
+   
+    mutating private func setFontSize(fontName: FontName, at index: Int) {
+        self.LargeTitle = UIFont(name: fontName.rawValue, size: self.LargeTitleFontSizes[index])
+        self.Title1 = UIFont(name: fontName.rawValue, size: self.Title1FontSizes[index])
+        self.Title2 = UIFont(name: fontName.rawValue, size: self.Title2FontSizes[index])
+        self.Title3 = UIFont(name: fontName.rawValue, size: self.Title3FontSizes[index])
+        self.Headline = UIFont(name: fontName.rawValue, size: self.HeadlineFontSizes[index])
+        self.Body = UIFont(name: fontName.rawValue, size: self.BodyFontSizes[index])
+        self.Callout = UIFont(name: fontName.rawValue, size: self.CalloutFontSizes[index])
+        self.Subhead = UIFont(name: fontName.rawValue, size: self.SubheadFontSizes[index])
+        self.Footnote = UIFont(name: fontName.rawValue, size: self.FootnoteFontSizes[index])
+        self.Caption1 = UIFont(name: fontName.rawValue, size: self.Caption1FontSizes[index])
+        self.Caption2 = UIFont(name: fontName.rawValue, size: self.Caption2FontSizes[index])
     }
     
     mutating private func setFontNames(fontName: FontName) {
-        self.LargeTitle = UIFont(name: fontName.rawValue, size: 10)
-        self.Title1 = UIFont(name: fontName.rawValue, size: 10)
-        self.Title2 = UIFont(name: fontName.rawValue, size: 10)
-        self.Title3 = UIFont(name: fontName.rawValue, size: 10)
-        self.Headline = UIFont(name: fontName.rawValue, size: 10)
-        self.Body = UIFont(name: fontName.rawValue, size: 10)
-        self.Callout = UIFont(name: fontName.rawValue, size: 10)
-        self.Subhead = UIFont(name: fontName.rawValue, size: 10)
-        self.Footnote = UIFont(name: fontName.rawValue, size: 10)
-        self.Caption1 = UIFont(name: fontName.rawValue, size: 10)
-        self.Caption2 = UIFont(name: fontName.rawValue, size: 10)
-    }
-    
-    private func setFontSize() {
         switch Device.size() {
         case .unknownSize:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[0])
-            self.Title1?.withSize(self.LargeTitleFontSizes[0])
-            self.Title2?.withSize(self.LargeTitleFontSizes[0])
-            self.Title3?.withSize(self.LargeTitleFontSizes[0])
-            self.Headline?.withSize(self.LargeTitleFontSizes[0])
-            self.Body?.withSize(self.LargeTitleFontSizes[0])
-            self.Callout?.withSize(self.LargeTitleFontSizes[0])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[0])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[0])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[0])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[0])
+            self.setFontSize(fontName: fontName, at: 0)
         case .screen3_5Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[1])
-            self.Title1?.withSize(self.LargeTitleFontSizes[1])
-            self.Title2?.withSize(self.LargeTitleFontSizes[1])
-            self.Title3?.withSize(self.LargeTitleFontSizes[1])
-            self.Headline?.withSize(self.LargeTitleFontSizes[1])
-            self.Body?.withSize(self.LargeTitleFontSizes[1])
-            self.Callout?.withSize(self.LargeTitleFontSizes[1])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[1])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[1])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[1])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[1])
+            self.setFontSize(fontName: fontName, at: 1)
         case .screen4Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[2])
-            self.Title1?.withSize(self.LargeTitleFontSizes[2])
-            self.Title2?.withSize(self.LargeTitleFontSizes[2])
-            self.Title3?.withSize(self.LargeTitleFontSizes[2])
-            self.Headline?.withSize(self.LargeTitleFontSizes[2])
-            self.Body?.withSize(self.LargeTitleFontSizes[2])
-            self.Callout?.withSize(self.LargeTitleFontSizes[2])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[2])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[2])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[2])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[2])
+            self.setFontSize(fontName: fontName, at: 2)
         case .screen4_7Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[3])
-            self.Title1?.withSize(self.LargeTitleFontSizes[3])
-            self.Title2?.withSize(self.LargeTitleFontSizes[3])
-            self.Title3?.withSize(self.LargeTitleFontSizes[3])
-            self.Headline?.withSize(self.LargeTitleFontSizes[3])
-            self.Body?.withSize(self.LargeTitleFontSizes[3])
-            self.Callout?.withSize(self.LargeTitleFontSizes[3])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[3])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[3])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[3])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[3])
+            self.setFontSize(fontName: fontName, at: 3)
         case .screen5_5Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[4])
-            self.Title1?.withSize(self.LargeTitleFontSizes[4])
-            self.Title2?.withSize(self.LargeTitleFontSizes[4])
-            self.Title3?.withSize(self.LargeTitleFontSizes[4])
-            self.Headline?.withSize(self.LargeTitleFontSizes[4])
-            self.Body?.withSize(self.LargeTitleFontSizes[4])
-            self.Callout?.withSize(self.LargeTitleFontSizes[4])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[4])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[4])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[4])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[4])
+            self.setFontSize(fontName: fontName, at: 4)
         case .screen5_8Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[5])
-            self.Title1?.withSize(self.LargeTitleFontSizes[5])
-            self.Title2?.withSize(self.LargeTitleFontSizes[5])
-            self.Title3?.withSize(self.LargeTitleFontSizes[5])
-            self.Headline?.withSize(self.LargeTitleFontSizes[5])
-            self.Body?.withSize(self.LargeTitleFontSizes[5])
-            self.Callout?.withSize(self.LargeTitleFontSizes[5])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[5])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[5])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[5])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[5])
+            self.setFontSize(fontName: fontName, at: 5)
         case .screen6_1Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[6])
-            self.Title1?.withSize(self.LargeTitleFontSizes[6])
-            self.Title2?.withSize(self.LargeTitleFontSizes[6])
-            self.Title3?.withSize(self.LargeTitleFontSizes[6])
-            self.Headline?.withSize(self.LargeTitleFontSizes[6])
-            self.Body?.withSize(self.LargeTitleFontSizes[6])
-            self.Callout?.withSize(self.LargeTitleFontSizes[6])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[6])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[6])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[6])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[6])
+            self.setFontSize(fontName: fontName, at: 6)
         case .screen6_5Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[7])
-            self.Title1?.withSize(self.LargeTitleFontSizes[7])
-            self.Title2?.withSize(self.LargeTitleFontSizes[7])
-            self.Title3?.withSize(self.LargeTitleFontSizes[7])
-            self.Headline?.withSize(self.LargeTitleFontSizes[7])
-            self.Body?.withSize(self.LargeTitleFontSizes[7])
-            self.Callout?.withSize(self.LargeTitleFontSizes[7])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[7])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[7])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[7])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[7])
+           self.setFontSize(fontName: fontName, at: 7)
         case .screen7_9Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[8])
-            self.Title1?.withSize(self.LargeTitleFontSizes[8])
-            self.Title2?.withSize(self.LargeTitleFontSizes[8])
-            self.Title3?.withSize(self.LargeTitleFontSizes[8])
-            self.Headline?.withSize(self.LargeTitleFontSizes[8])
-            self.Body?.withSize(self.LargeTitleFontSizes[8])
-            self.Callout?.withSize(self.LargeTitleFontSizes[8])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[8])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[8])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[8])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[8])
+            self.setFontSize(fontName: fontName, at: 8)
         case .screen9_7Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[9])
-            self.Title1?.withSize(self.LargeTitleFontSizes[9])
-            self.Title2?.withSize(self.LargeTitleFontSizes[9])
-            self.Title3?.withSize(self.LargeTitleFontSizes[9])
-            self.Headline?.withSize(self.LargeTitleFontSizes[9])
-            self.Body?.withSize(self.LargeTitleFontSizes[9])
-            self.Callout?.withSize(self.LargeTitleFontSizes[9])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[9])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[9])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[9])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[9])
+            self.setFontSize(fontName: fontName, at: 9)
         case .screen10_5Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[10])
-            self.Title1?.withSize(self.LargeTitleFontSizes[10])
-            self.Title2?.withSize(self.LargeTitleFontSizes[10])
-            self.Title3?.withSize(self.LargeTitleFontSizes[10])
-            self.Headline?.withSize(self.LargeTitleFontSizes[10])
-            self.Body?.withSize(self.LargeTitleFontSizes[10])
-            self.Callout?.withSize(self.LargeTitleFontSizes[10])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[10])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[10])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[10])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[10])
+            self.setFontSize(fontName: fontName, at: 10)
         case .screen12_9Inch:
-            self.LargeTitle?.withSize(self.LargeTitleFontSizes[11])
-            self.Title1?.withSize(self.LargeTitleFontSizes[11])
-            self.Title2?.withSize(self.LargeTitleFontSizes[11])
-            self.Title3?.withSize(self.LargeTitleFontSizes[11])
-            self.Headline?.withSize(self.LargeTitleFontSizes[11])
-            self.Body?.withSize(self.LargeTitleFontSizes[11])
-            self.Callout?.withSize(self.LargeTitleFontSizes[11])
-            self.Subhead?.withSize(self.LargeTitleFontSizes[11])
-            self.Footnote?.withSize(self.LargeTitleFontSizes[11])
-            self.Caption1?.withSize(self.LargeTitleFontSizes[11])
-            self.Caption2?.withSize(self.LargeTitleFontSizes[11])
+           self.setFontSize(fontName: fontName, at: 11)
         }
     }
 }
